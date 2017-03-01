@@ -75,4 +75,5 @@
     <xsl:template match="row/*[normalize-space()]">
         <xsl:copy-of select="."></xsl:copy-of>
     </xsl:template>
+    <xsl:template match="row[HeadingY/normalize-space()]"/>
 </xsl:stylesheet>
