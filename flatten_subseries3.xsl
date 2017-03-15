@@ -12,6 +12,9 @@
         </root>
     </xsl:template>
 
+    <xsl:template match="row
+        [Subseries2/normalize-space()]">
+    </xsl:template>
     <xsl:template
         match="
             row
@@ -20,6 +23,16 @@
         <row>
             <xsl:apply-templates select="child::*"/>
             <subseries3>Y</subseries3>
+        </row>
+    </xsl:template>
+    <xsl:template
+        match="
+        row
+        [Subseries3/normalize-space()]
+        [not(following-sibling::row[1][Subseries4/normalize-space()])]">
+        <row>
+            <xsl:apply-templates select="child::*"/>
+            <subseries3><xsl:value-of select="normalize-space(Subseries3)"/></subseries3>
         </row>
     </xsl:template>
 
