@@ -89,4 +89,5 @@
         <xsl:copy-of select="."></xsl:copy-of>
     </xsl:template>
     <xsl:template match="row[HeadingY/normalize-space()]"/>
+    <xsl:template match="row[Subseries1_L != '1' ]"/>
 </xsl:stylesheet>
